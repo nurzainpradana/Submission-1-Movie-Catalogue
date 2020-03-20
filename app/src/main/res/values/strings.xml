@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Submission 1 Movie Catalogue</string>
+    <string name="title_movies">Movies Title</string>
+    <string name="description_movies">Movies Description</string>
+    <string name="year_movies">Movies Year</string>
+
+    <string-array name="data_movie_title">
+        <item>Aquaman</item>
+        <item>Avengers: Infinity War</item>
+        <item>Bumble Bee</item>
+        <item>Deadpool</item>
+        <item>Dragon Ball</item>
+        <item>Mortal Engine</item>
+        <item>Preman Pensiun</item>
+        <item>Robin Hood</item>
+        <item>Spiderman</item>
+        <item>Venom</item>
+    </string-array>
+
+    <string-array name="data_movie_genre">
+        <item>Action, Adventure, Fantasy</item>
+        <item>Adventure, Action, Science Fiction</item>
+        <item>Action, Adventure, Science Fiction</item>
+        <item>Comedy, Action</item>
+        <item>Action, Adventure, Animation, Kids</item>
+        <item>Adventure, Fantasy</item>
+        <item>Comedy, Drama</item>
+        <item>Adventure, Action</item>
+        <item>Fantasy, Action</item>
+        <item>Science Fiction, Action</item>
+    </string-array>
+
+    <string-array name="data_movie_year">
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2018</item>
+        <item>2002</item>
+        <item>2018</item>
+    </string-array>
+
+    <array name="data_movie_poster">
+        <item>@drawable/poster_aquaman</item>
+        <item>@drawable/poster_avengerinfinity</item>
+        <item>@drawable/poster_bumblebee</item>
+        <item>@drawable/poster_deadpool</item>
+        <item>@drawable/poster_dragonball</item>
+        <item>@drawable/poster_mortalengine</item>
+        <item>@drawable/poster_preman</item>
+        <item>@drawable/poster_robinhood</item>
+        <item>@drawable/poster_spiderman</item>
+        <item>@drawable/poster_venom</item>
+    </array>
+
+    <string-array name="data_movie_description">
+        <item>Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm.
+            With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way
+            is Arthur Curry, Orm\'s half-human, half-Atlantean brother and true heir to the throne.</item>
+        <item>As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger
+            has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts
+            of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to
+            this moment - the fate of Earth and existence itself has never been more uncertain.</item>
+        <item>On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small Californian beach town. Charlie, on the cusp of turning
+            18 and trying to find her place in the world, discovers Bumblebee, battle-scarred and broken. When Charlie revives him, she quickly learns
+            this is no ordinary yellow VW bug.</item>
+        <item>A kidnapped Fred Savage is forced to endure Deadpool\'s PG-13 rendition of Deadpool 2 as a Princess Bride-esque story that\'s full of
+            magic, wonder &amp; zero F\'s.</item>
+        <item>Trunks returns from the future to train with Goku and Vegeta. However, it disappears without warning. Then the mysterious Fu bursts in,
+            telling them that Trunks has been imprisoned in the Prison Planet, a mysterious complex in an unknown place in the universes. The group
+            seeks the dragon balls to free Trunks, but an endless battle awaits them! Will Goku and the others rescue Trunks and escape the Prison
+            Planet</item>
+        <item>Many thousands of years in the future, Earth\’s cities roam the globe on huge wheels, devouring each other in a struggle for ever
+            diminishing resources. On one of these massive traction cities, the old London, Tom Natsworthy has an unexpected encounter with a
+            mysterious young woman from the wastelands who will change the course of his life forever.</item>
+        <item>After three years, the business of Muslihat Epi Kusnandar, who has retired as a thug, has a problem. Sales decline. Muslihat also
+            faces new problems when Safira (Safira Maharani), her only daughter, grows up in adolescence and begins to be visited by boys. A bigger
+            problem: frictions between his former subordinates.</item>
+        <item>A war-hardened Crusader and his Moorish commander mount an audacious revolt against the corrupt English crown.</item>
+        <item>After being bitten by a genetically altered spider, nerdy high school student Peter Parker is endowed with amazing powers.</item>
+        <item>Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent,
+            super powerful alien symbiote. Soon, he must rely on his newfound powers to protect the world from a shadowy organization looking for
+            a symbiote of their own.</item>
+    </string-array>
+
+</resources>
