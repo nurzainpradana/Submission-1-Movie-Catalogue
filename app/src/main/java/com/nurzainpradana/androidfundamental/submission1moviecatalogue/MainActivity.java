@@ -7,48 +7,52 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.nurzainpradana.androidfundamental.submission1moviecatalogue.Adapter.MovieAdapter;
-import com.nurzainpradana.androidfundamental.submission1moviecatalogue.Model.Movie;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private MovieAdapter adapter;
-    //inisialisasi array
-    private String[] dataMovieTitle, dataMovieDescription, dataMovieYear, dataMovieGenre;
-    private TypedArray dataPoster;
 
-    private ArrayList<Movie> movies;
+    String title, genre, year, description;
+    Integer poster;
+
+    ArrayList<Movie> movies;
+
+    //inisialisasi array
+    private String[] dataMovieTitle;
+    private String[] dataMovieDescription;
+    private  String[] dataMovieYear;
+    private  String[] dataMovieGenre;
+    private TypedArray dataPoster;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView listView = findViewById(R.id.lv_list_movie);
         adapter = new MovieAdapter(this);
+        ListView listView = findViewById(R.id.lv_list_movie);
         listView.setAdapter(adapter);
-
         prepare();
         addItem();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Movie movie = new Movie();
-                movie.setTitle(movies.get(position).getTitle());
-                movie.setYear(movies.get(position).getYear());
-                movie.setDescription(movies.get(position).getDescription());
-                movie.setPoster(movies.get(position).getPoster());
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent gotodetail = new Intent(MainActivity.this, DetailMovieAct.class);
 
-                Intent gotodetailmovie = new Intent(MainActivity.this, DetailMovieAct.class);
-                gotodetailmovie.putExtra(DetailMovieAct.EXTRA_MOVIE, movie);
-                startActivity(gotodetailmovie);
+                Movie mMovie = new Movie();
+                mMovie.setTitle(movies.get(i).getTitle());
+                mMovie.setGenre(movies.get(i).getGenre());
+                mMovie.setDescription(movies.get(i).getDescription());
+                mMovie.setYear(movies.get(i).getYear());
+                mMovie.setPoster(movies.get(i).getPoster());
+
+                gotodetail.putExtra(DetailMovieAct.EXTRA_MOVIE, mMovie);
+                startActivity(gotodetail);
             }
         });
     }
@@ -63,8 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void addItem(){
         movies = new ArrayList<>();
-
-        for (int i = 0; i < dataMovieTitle.length; i++) {
+        for (int i = 0; i < dataMovieTitle.length ; i++) {
             Movie movie = new Movie();
             movie.setTitle(dataMovieTitle[i]);
             movie.setDescription(dataMovieDescription[i]);

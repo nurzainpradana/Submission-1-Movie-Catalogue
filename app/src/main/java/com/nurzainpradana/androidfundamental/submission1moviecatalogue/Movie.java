@@ -1,4 +1,4 @@
-package com.nurzainpradana.androidfundamental.submission1moviecatalogue.Model;
+package com.nurzainpradana.androidfundamental.submission1moviecatalogue;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -19,6 +19,20 @@ public class Movie implements Parcelable {
         genre = in.readString();
         description = in.readString();
         year = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(poster);
+        dest.writeString(title);
+        dest.writeString(genre);
+        dest.writeString(description);
+        dest.writeString(year);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Movie> CREATOR = new Creator<Movie>() {
@@ -73,17 +87,4 @@ public class Movie implements Parcelable {
         this.year = year;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(title);
-        parcel.writeString(year);
-        parcel.writeString(description);
-        parcel.writeString(genre);
-        parcel.writeInt(poster);
-    }
 }

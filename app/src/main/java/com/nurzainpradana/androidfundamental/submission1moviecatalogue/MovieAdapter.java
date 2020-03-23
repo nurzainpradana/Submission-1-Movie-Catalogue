@@ -1,6 +1,7 @@
-package com.nurzainpradana.androidfundamental.submission1moviecatalogue.Adapter;
+package com.nurzainpradana.androidfundamental.submission1moviecatalogue;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,12 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.nurzainpradana.androidfundamental.submission1moviecatalogue.Model.Movie;
-import com.nurzainpradana.androidfundamental.submission1moviecatalogue.R;
-
 import java.util.ArrayList;
 
-public class MovieAdapter extends BaseAdapter {
+public class MovieAdapter extends BaseAdapter{
     private Context context;
     private ArrayList<Movie> movies = new ArrayList<>();
 
@@ -47,24 +45,16 @@ public class MovieAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ViewHolder viewHolder;
-
         if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.item_movie, viewGroup, false);
-
-            viewHolder = new ViewHolder(view);
-            viewHolder.txtTitle = view.findViewById(R.id.txt_title);
-            viewHolder.txtDesc = view.findViewById(R.id.txt_description);
-            viewHolder.txtYear = view.findViewById(R.id.txt_year);
-            viewHolder.imgPoster = view.findViewById(R.id.img_poster);
-            view.setTag(viewHolder);
         }
-        viewHolder  = (ViewHolder) view.getTag();
-        viewHolder.bind(movies.get(i));
-        return view;
+            ViewHolder viewHolder = new ViewHolder(view);
+            Movie movie = (Movie) getItem(i);
+            viewHolder.bind(movie);
+            return view;
     }
 
-    private class ViewHolder {
+    private static class ViewHolder{
         private TextView txtTitle, txtDesc, txtYear;
         private ImageView imgPoster;
 
@@ -81,5 +71,7 @@ public class MovieAdapter extends BaseAdapter {
             txtYear.setText(movie.getYear());
             imgPoster.setImageResource(movie.getPoster());
         }
+
     }
+
 }

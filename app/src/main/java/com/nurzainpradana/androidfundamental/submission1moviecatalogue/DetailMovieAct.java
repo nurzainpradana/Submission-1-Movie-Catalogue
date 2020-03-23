@@ -1,51 +1,41 @@
 package com.nurzainpradana.androidfundamental.submission1moviecatalogue;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 import com.jgabrielfreitas.core.BlurImageView;
-import com.nurzainpradana.androidfundamental.submission1moviecatalogue.Model.Movie;
 
-public class DetailMovieAct extends AppCompatActivity {
-    public static final String EXTRA_MOVIE = "extra_movie";
+public class DetailMovieAct extends Activity {
+    public static String EXTRA_MOVIE = "extra_movie";
 
-    TextView tvTitle, tvGenre, tvDescription, tvYear;
-    BlurImageView ivDetailPoster;
+    TextView tvDetailTitle, tvDetailYear, tvDetailGenre, tvDetailDescription;
     ImageView ivPosterMini;
-
-    String title, year, description, genre;
-    Integer poster;
+    BlurImageView ivPosterBackround;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_movie);
 
-        tvTitle = findViewById(R.id.txt_title_detail);
-        tvYear = findViewById(R.id.txt_year_detail);
-        tvDescription = findViewById(R.id.txt_description_detail2);
-        tvGenre = findViewById(R.id.txt_genre_detail2);
-
+        tvDetailTitle = findViewById(R.id.txt_title_detail);
+        tvDetailDescription = findViewById(R.id.txt_description_detail);
+        tvDetailGenre = findViewById(R.id.txt_genre_detail);
+        tvDetailYear = findViewById(R.id.txt_year_detail);
         ivPosterMini = findViewById(R.id.img_poster_detail_mini);
-        ivDetailPoster = findViewById(R.id.img_poster_detail);
+        ivPosterBackround = findViewById(R.id.img_poster_detail);
 
-        Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
-        title = movie.getTitle();
-        year = movie.getYear();
-        description = movie.getDescription();
-        genre = movie.getGenre();
-        poster = movie.getPoster();
+        Movie mMovie = getIntent().getParcelableExtra(EXTRA_MOVIE);
+        tvDetailTitle.setText(mMovie.getTitle());
+        tvDetailYear.setText(mMovie.getYear());
+        tvDetailGenre.setText(mMovie.getGenre());
+        tvDetailDescription.setText(mMovie.getDescription());
+        ivPosterMini.setImageResource(mMovie.getPoster());
+        ivPosterBackround.setImageResource(mMovie.getPoster());
 
-        tvTitle.setText(title);
-        tvGenre.setText(genre);
-        tvDescription.setText(description);
-        tvYear.setText(year);
-
-        ivDetailPoster.setImageResource(poster);
-        ivPosterMini.setImageResource(poster);
-
+        ivPosterBackround.setBlur(3);
     }
 }
