@@ -3,6 +3,13 @@
     <string name="title_movies">Movies Title</string>
     <string name="description_movies">Movies Description</string>
     <string name="year_movies">Movies Year</string>
+    <string name="title_movie">TITLE MOVIE</string>
+    <string name="year">YEAR</string>
+    <string name="genre">GENRE</string>
+    <string name="genre_2">GENRE 2</string>
+    <string name="description">DESCRIPTION</string>
+    <string name="description_movie">Description Movie</string>
+    <string name="poster_detail">Poster Detail</string>
 
     <string-array name="data_movie_title">
         <item>Aquaman</item>
